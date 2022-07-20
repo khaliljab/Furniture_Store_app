@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Varification_code"
+    android:background="@color/white"
+    android:layoutDirection="rtl"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        >
+        <TextView
+            android:id="@+id/title_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_medium"
+            android:text="رمز التحقق"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            />
+        <ImageButton
+            android:id="@+id/notification_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+            android:background="@null"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/varification_code" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="رمز التحقق"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/main_color_2"
+                android:textSize="22sp"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="أدخل رمز التحقق الذي أرسلناه لك على البريد الإلكتروني المدخل"
+                android:textColor="#7E7E7E"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                />
+            <com.wynsbin.vciv.VerificationCodeInputView
+                android:id="@+id/vciv_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:vciv_et_cursor_color="@color/main_color_2"
+                app:vciv_et_background="@color/white"
+                app:vciv_et_width="30dp"
+                app:vciv_et_height="30dp"
+                app:vciv_et_inputType="number"
+                app:vciv_et_number="5"
+                app:vciv_et_text_color="@android:color/black"
+                app:vciv_et_text_size="18sp"
+                app:vciv_et_underline_height="2dp"
+                app:vciv_et_underline_show="true"
+                app:vciv_et_underline_default_color="#757575"
+                app:vciv_et_underline_focus_color="@color/main_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/confirm_code"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                android:background="@drawable/shape_btn"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="تأكيد الرمز"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+<!--            <com.airbnb.lottie.LottieAnimationView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                app:lottie_autoPlay="true"-->
+<!--                app:lottie_fileName="ok.json"-->
+<!--                />-->
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
