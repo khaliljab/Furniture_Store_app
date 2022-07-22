@@ -9,26 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
+
         <activity
             android:name=".NewPassword"
             android:exported="false" />
         <activity
             android:name=".Varification_code"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".ForgetPassword"
             android:exported="false" />
         <activity
             android:name=".HomePage.HomeActivity"
             android:exported="true" />
-
-
         <activity
             android:name=".LoginAndRegister.RegisterActivity"
-            android:exported="true"
-            >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".OnboardingAndSplash.ShowOnboarding"
             android:exported="false" />
@@ -40,12 +36,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".LoginAndRegister.LoginActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

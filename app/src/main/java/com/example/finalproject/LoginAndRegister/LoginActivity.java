@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         remember=findViewById(R.id.remember);
 
 
+
         SharedPreferences preferences =getSharedPreferences("MyFile",MODE_PRIVATE);
         String checkbox =preferences.getString("rem","");
         if (checkbox.equals("true")){
@@ -85,6 +86,8 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "تم تسجيل الدخول بنجاح", Toast.LENGTH_SHORT).show();
                             Intent intent =new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
+                            ed_email.setText("");
+                            ed_password.setText("");
                         }else
                         Toast.makeText(LoginActivity.this, "خطأ في البريد الالكتروني أو كلمة المرور", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.INVISIBLE);

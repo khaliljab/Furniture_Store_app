@@ -89,6 +89,9 @@ public class RegisterActivity extends AppCompatActivity {
                         firebaseFirestore.collection("Users").document(firebaseAuth.getCurrentUser().getUid()).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
+                                ed_email.setText("");
+                                ed_Username.setText("");
+                                ed_password.setText("");
                             }
                         });
                         Intent intent =new Intent(RegisterActivity.this,LoginActivity.class);

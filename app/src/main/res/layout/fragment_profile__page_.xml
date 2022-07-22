@@ -3,14 +3,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomePage.Profile_Page_Fr"
     android:layoutDirection="rtl"
-    android:background="@color/white"
-    >
+    android:background="@color/white">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/main_color"
+            >
+
+            <ImageView
+                android:id="@+id/image_person"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile"
+                />
+        </com.google.android.material.card.MaterialCardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="50dp"
+            android:backgroundTint="#F3F3F3"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="-40dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            >
+            <ImageView
+                android:id="@+id/add_photo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_camera"
+                android:background="@null"
+                android:layout_gravity="center"
+                />
+
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/add_firestore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="add"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="اسم المستخدم"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="20sp"
+            android:textColor="@color/main_color_2"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_plus_icon"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="عنوان المنزل"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="18sp"
+                android:textColor="@color/main_color_2"
+                android:layout_marginStart="10dp"
+                />
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
 </FrameLayout>

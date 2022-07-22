@@ -26,6 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -37,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     NavigationView navigationView;
     ImageButton menu_btn;
     DrawerLayout drawer;
+    ImageView person_photo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.drawer);
         View headerView = navigationView.getHeaderView(0);
         Username_drawer= headerView.findViewById(R.id.Username_drawer);
+        person_photo= headerView.findViewById(R.id.person_photo);
         menu_btn =findViewById(R.id.menu_btn);
         drawer = findViewById(R.id.drawer_layout);
 
@@ -62,6 +65,8 @@ public class HomeActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 String name= (String) task.getResult().getData().get("Name");
                 Username_drawer.setText(name);
+                String image = (String) task.getResult().getData().get("Profile Photo");
+                Picasso.get().load(image).into(person_photo);
             }
         });
 
@@ -77,8 +82,10 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
-                        fragment(new Home_Page_Fr());
-                        title_page.setText("الرئيسية");
+//                        fragment(new Home_Page_Fr());
+//                        title_page.setText("الرئيسية");
+                        Intent intent = new Intent(HomeActivity.this,HomeActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.facebook:
                         String urlPage = "https://www.facebook.com/modern.for.furniture";
@@ -100,6 +107,7 @@ public class HomeActivity extends AppCompatActivity {
                         editor.putString("rem","false");
                         editor.apply();
                         finish();
+
                         break;
                 }
                 drawer.closeDrawer(GravityCompat.START);

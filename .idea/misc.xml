@@ -15,21 +15,25 @@
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_forget_password.xml" value="0.18" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_home.xml" value="0.14" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_main.xml" value="0.22402736212056434" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_new_password.xml" value="0.2" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_show_onboarding.xml" value="0.22" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_splash.xml" value="0.22" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/activity_varification_code.xml" value="0.22" />
-        <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_cart__page_.xml" value="0.22402736212056434" />
+        <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/dialog.xml" value="0.25" />
+        <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_cart__page_.xml" value="0.18" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_favorite__page_.xml" value="0.22402736212056434" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_home__page_.xml" value="0.18" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_onboarding_1.xml" value="0.22" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_onboarding_2.xml" value="0.25" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_onboarding_3.xml" value="0.25" />
-        <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_profile__page_.xml" value="0.14" />
+        <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/fragment_profile__page_.xml" value="0.2" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/header_drawer_menu.xml" value="0.2" />
+        <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/item_rv_cart.xml" value="0.2" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/item_rv_categories.xml" value="0.2" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/item_rv_categories_2.xml" value="0.22" />
+        <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/layout/item_rv_favorite.xml" value="0.16" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/menu/drawer_menu.xml" value="0.1" />
         <entry key="..\:/Users/khalil/AndroidStudioProjects/FinalProject2/app/src/main/res/menu/nav.xml" value="0.11504424778761062" />
       </map>
@@ -40,5 +44,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>
