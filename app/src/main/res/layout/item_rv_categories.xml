@@ -10,6 +10,7 @@
     android:layout_marginEnd="10dp"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
+    android:id="@+id/card_view_categories"
     >
 
         <androidx.constraintlayout.widget.ConstraintLayout

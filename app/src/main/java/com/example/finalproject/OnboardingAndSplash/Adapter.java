@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class Adapter extends FragmentStateAdapter {
     ArrayList<Fragment> fragments;
+
     public Adapter(@NonNull FragmentActivity fragmentActivity,ArrayList<Fragment> fragments) {
         super(fragmentActivity);
         this.fragments = fragments;

@@ -1,7 +1,10 @@
 package com.example.finalproject.HomePage;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -18,16 +21,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.finalproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.auth.User;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -41,6 +48,9 @@ public class Profile_Page_Fr extends Fragment {
     FirebaseFirestore firestore;
     Uri uri;
     Button add_firestore;
+    TextView TV_Username,TV_Email;
+    LinearLayout liner_logout;
+
     ActivityResultLauncher<Intent> launcher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -51,8 +61,6 @@ public class Profile_Page_Fr extends Fragment {
                 }
             }
     );
-
-
     public Profile_Page_Fr() {
         // Required empty public constructor
     }
@@ -62,6 +70,10 @@ public class Profile_Page_Fr extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile__page_, container, false);
 
+        liner_logout = view.findViewById(R.id.liner_logout);
+
+        TV_Username = view.findViewById(R.id.TV_Username);
+        TV_Email = view.findViewById(R.id.TV_Email);
         add_photo = view.findViewById(R.id.add_photo);
         image_person = view.findViewById(R.id.image_person);
         add_firestore = view.findViewById(R.id.add_firestore);
@@ -107,7 +119,48 @@ public class Profile_Page_Fr extends Fragment {
 
             }
         });
+        firestore.collection("Users").document(firebaseAuth.getCurrentUser().getUid())
+                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                String Email =(String) task.getResult().getData().get("Email");
+                String UserName =(String) task.getResult().getData().get("Name");
+                String image = (String) task.getResult().getData().get("Profile Photo");
+                Picasso.get().load(image).into(image_person);
+                TV_Username.setText(UserName);
+                TV_Email.setText(Email);
+            }
+        });
+
+        liner_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getActivity().getSharedPreferences("MyFile", MODE_PRIVATE);
+                SharedPreferences.Editor editor= preferences.edit();
+                editor.putString("rem","false");
+                editor.apply();
+                getActivity().finish();
+            }
+        });
+
         return view;
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

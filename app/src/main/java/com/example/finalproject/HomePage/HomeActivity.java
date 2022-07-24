@@ -69,7 +69,6 @@ public class HomeActivity extends AppCompatActivity {
                 Picasso.get().load(image).into(person_photo);
             }
         });
-
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

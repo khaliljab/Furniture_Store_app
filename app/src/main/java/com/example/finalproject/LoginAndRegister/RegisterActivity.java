@@ -72,7 +72,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }else if(Patterns.EMAIL_ADDRESS.matcher(Email).matches()) {
                 }else
                     ed_email.setError("خطأ في صيغة البريد الإلكتروني");
-
                 if(Password.isEmpty()){
                     ed_password.setError("الرجاء إدخال كلمة المرور");
                     return;

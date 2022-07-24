@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
-
+        <activity
+            android:name=".All_Categories"
+            android:exported="false" />
         <activity
             android:name=".NewPassword"
             android:exported="false" />
@@ -24,7 +26,7 @@
             android:exported="true" />
         <activity
             android:name=".LoginAndRegister.RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".OnboardingAndSplash.ShowOnboarding"
             android:exported="false" />

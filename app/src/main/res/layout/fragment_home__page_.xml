@@ -43,47 +43,168 @@
             android:textColor="@color/main_color_2"
             android:textSize="20sp"
             />
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_1"
+
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
-            />
+            >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
             >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
+            <androidx.cardview.widget.CardView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:cardCornerRadius="10dp"
+                >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cat_1"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="@drawable/item_bg_2"
                 android:text="الكنب"
-                android:textColor="@color/main_color_2"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:fontFamily="@font/roboto_medium"
-                android:text="شاهد المزيد"
-                android:textColor="@color/main_color"
                 android:textSize="14sp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:foreground="?attr/selectableItemBackground"
                 />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginStart="10dp"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cat_2"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/bg_1"
+                    android:text="الإضاءة"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="14sp"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginStart="10dp"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cat_3"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/bg_2"
+                    android:text="السجاد"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="14sp"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginStart="10dp"
+                >
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cat_4"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/bg_3"
+                    android:text="طاولة سفرة"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="14sp"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                >
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cat_5"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/bg_4"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="غرف نوم"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle"
+        </HorizontalScrollView>
+        <FrameLayout
+            android:id="@+id/frameLayout_cat"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            />
+            android:layout_height="match_parent" >
+
+        </FrameLayout>
+
     </LinearLayout>
 
-
 </FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--        <androidx.recyclerview.widget.RecyclerView-->
+    <!--            android:id="@+id/rv_1"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="100dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:layout_marginStart="20dp"-->
+    <!--            />-->
+
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginHorizontal="20dp"-->
+    <!--            android:layout_marginTop="20dp"-->
+    <!--            >-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:fontFamily="@font/roboto_medium"-->
+    <!--                android:text="الكنب"-->
+    <!--                android:textColor="@color/main_color_2"-->
+    <!--                android:textSize="20sp"-->
+    <!--                android:layout_weight="1"-->
+    <!--                />-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:fontFamily="@font/roboto_medium"-->
+    <!--                android:text="شاهد المزيد"-->
+    <!--                android:textColor="@color/main_color"-->
+    <!--                android:textSize="14sp"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:clickable="true"-->
+    <!--                android:foreground="?attr/selectableItemBackground"-->
+    <!--                />-->
+    <!--        </LinearLayout>-->
+    <!--        <androidx.recyclerview.widget.RecyclerView-->
+    <!--            android:id="@+id/recycle"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            />-->
