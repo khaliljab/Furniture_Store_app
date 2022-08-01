@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Varification_code"
+    tools:context=".HomePage.Varification_code"
     android:background="@color/white"
     android:layoutDirection="rtl"
     >

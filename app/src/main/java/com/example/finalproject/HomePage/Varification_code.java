@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.HomePage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.wynsbin.vciv.VerificationCodeInputView;
+import com.example.finalproject.R;
 
 public class Varification_code extends AppCompatActivity {
     Button confirm_code;

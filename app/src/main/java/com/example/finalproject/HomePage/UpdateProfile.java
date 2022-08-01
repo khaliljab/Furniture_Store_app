@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.HomePage;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -22,6 +22,7 @@ import com.example.finalproject.HomePage.HomeActivity;
 import com.example.finalproject.HomePage.Profile_Page_Fr;
 import com.example.finalproject.LoginAndRegister.LoginActivity;
 import com.example.finalproject.LoginAndRegister.RegisterActivity;
+import com.example.finalproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;

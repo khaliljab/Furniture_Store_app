@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.HomePage;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

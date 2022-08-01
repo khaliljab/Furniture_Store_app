@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.HomePage;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.finalproject.HomePage.AdapterRecycleViewHome2;
+import com.example.finalproject.R;
 
 import java.util.ArrayList;
 

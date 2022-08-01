@@ -12,19 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
-            android:name=".UpdateProfile"
+            android:name=".HomePage.UpdateProfile"
             android:exported="false" />
         <activity
-            android:name=".All_Categories"
+            android:name=".HomePage.All_Categories"
             android:exported="false" />
         <activity
-            android:name=".NewPassword"
+            android:name=".HomePage.NewPassword"
             android:exported="false" />
         <activity
-            android:name=".Varification_code"
+            android:name=".HomePage.Varification_code"
             android:exported="false" />
         <activity
-            android:name=".ForgetPassword"
+            android:name=".LoginAndRegister.ForgetPassword"
             android:exported="false" />
         <activity
             android:name=".HomePage.HomeActivity"

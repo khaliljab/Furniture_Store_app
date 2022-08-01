@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
-    tools:context=".All_Categories">
+    tools:context=".HomePage.All_Categories">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

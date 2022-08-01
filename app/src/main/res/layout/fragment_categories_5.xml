@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="rtl"
-    tools:context=".categories_5">
+    tools:context=".HomePage.categories_5">
 
     <LinearLayout
         android:layout_width="match_parent"

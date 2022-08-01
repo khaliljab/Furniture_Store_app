@@ -5,8 +5,6 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,19 +13,7 @@ import android.widget.Button;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.example.finalproject.AdapterFragmentCat;
-import com.example.finalproject.HomePage.AdapterRecycleViewHome;
-import com.example.finalproject.HomePage.AdapterRecycleViewHome2;
-import com.example.finalproject.OnboardingAndSplash.Adapter;
-import com.example.finalproject.OnboardingAndSplash.Onboarding_1;
-import com.example.finalproject.OnboardingAndSplash.Onboarding_2;
-import com.example.finalproject.OnboardingAndSplash.Onboarding_3;
 import com.example.finalproject.R;
-import com.example.finalproject.categories_1;
-import com.example.finalproject.categories_2;
-import com.example.finalproject.categories_3;
-import com.example.finalproject.categories_4;
-import com.example.finalproject.categories_5;
 
 import java.util.ArrayList;
 

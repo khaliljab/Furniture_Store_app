@@ -1,6 +1,5 @@
-package com.example.finalproject;
+package com.example.finalproject.HomePage;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,41 +9,39 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.finalproject.HomePage.AdapterRecycleViewHome2;
+import com.example.finalproject.R;
 
 import java.util.ArrayList;
 
-public class categories_1 extends Fragment {
-    RecyclerView recycleview_cat;
-    TextView see_more_1;
 
-    public categories_1() {
+public class categories_3 extends Fragment {
+    RecyclerView recycleview_cat_3;
+
+    public categories_3() {
         // Required empty public constructor
     }
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_categories_1, container, false);
-        recycleview_cat=view.findViewById(R.id.recycleview_cat);
-        see_more_1=view.findViewById(R.id.see_more_1);
+        View view= inflater.inflate(R.layout.fragment_categories_3, container, false);
+        recycleview_cat_3=view.findViewById(R.id.recycleview_cat_3);
         ArrayList<String> title2 = new ArrayList<>();
-        title2.add("كنب ثلاثة مقاعد");
-        title2.add("كنب مقعدين");
-        title2.add("كنب ثلاثة مقاعد");
-        title2.add("كنب مقعدين");
-        title2.add("كنب ثلاثة مقاعد");
+        title2.add("سجادة ملونة حجم كبير");
+        title2.add("سجادة عجمي حجم وسط");
+        title2.add("سجادة جلد حجم وسط");
+        title2.add("سجادة ممرات حجم وسط");
+        title2.add("سجادة بيضاء فاخرة");
         ArrayList<Integer> photo2 = new ArrayList<>();
-        photo2.add(R.drawable.photo_item_1);
-        photo2.add(R.drawable.photo_item_2);
-        photo2.add(R.drawable.photo_item_3);
-        photo2.add(R.drawable.photo_item_1);
-        photo2.add(R.drawable.photo_item_2);
+        photo2.add(R.drawable.carpets_1);
+        photo2.add(R.drawable.carpets_2);
+        photo2.add(R.drawable.carpets_3);
+        photo2.add(R.drawable.carpets_4);
+        photo2.add(R.drawable.carpets_5);
         ArrayList<String> price = new ArrayList<>();
         price.add("180 $");
         price.add("120 $");
@@ -59,18 +56,9 @@ public class categories_1 extends Fragment {
         rating.add(5f);
 
         AdapterRecycleViewHome2 adapter2 = new AdapterRecycleViewHome2(getActivity(),title2,photo2,price,rating);
-        recycleview_cat.setAdapter(adapter2);
+        recycleview_cat_3.setAdapter(adapter2);
         RecyclerView.LayoutManager layoutManager2 =new LinearLayoutManager(getActivity(),RecyclerView.VERTICAL,false);
-        recycleview_cat.setLayoutManager(layoutManager2);
-
-        see_more_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),All_Categories.class);
-                startActivity(intent);
-            }
-        });
-
+        recycleview_cat_3.setLayoutManager(layoutManager2);
         return view;
     }
 }
