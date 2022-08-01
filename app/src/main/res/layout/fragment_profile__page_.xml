@@ -19,7 +19,7 @@
             android:layout_height="150dp"
             app:cardCornerRadius="150dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             app:strokeWidth="2dp"
             app:strokeColor="@color/main_color"
             >
@@ -33,27 +33,6 @@
                 android:src="@drawable/profile"
                 />
         </com.google.android.material.card.MaterialCardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:cardCornerRadius="50dp"
-            android:backgroundTint="#F3F3F3"
-            android:layout_gravity="center"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="-40dp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackground"
-            >
-            <ImageView
-                android:id="@+id/add_photo"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_camera"
-                android:background="@null"
-                android:layout_gravity="center"
-                />
-
-        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/TV_Username"
@@ -119,6 +98,7 @@
                 android:textColor="@color/main_color_2"
                 />
                 <TextView
+                    android:id="@+id/Tv_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="فلسطين , غزة ,شارع عمر بن الخطاب"
@@ -165,6 +145,7 @@
                     android:textColor="@color/main_color_2"
                     />
                 <TextView
+                    android:id="@+id/Tv_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+97259259968"

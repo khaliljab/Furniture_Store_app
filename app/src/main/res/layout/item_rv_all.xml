@@ -18,22 +18,23 @@
        >
 
        <com.google.android.material.card.MaterialCardView
-           android:layout_width="24dp"
-           android:layout_height="24dp"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
            app:cardCornerRadius="6dp"
-           android:clickable="true"
-           android:foreground="?attr/selectableItemBackground"
            android:backgroundTint="@color/white"
            android:layout_marginStart="10dp"
            android:layout_marginTop="10dp"
            >
-           <ImageView
+
+           <ToggleButton
+               android:id="@+id/favButton"
                android:layout_width="16dp"
-               android:layout_height="16dp"
-               android:src="@drawable/ic_favorite_outline_icon"
-               android:background="@null"
+               android:layout_height="20dp"
                android:layout_gravity="center"
-               />
+               android:layout_weight="0.33"
+               android:background="@drawable/fav_toggle_2"
+               android:textOff=""
+               android:textOn="" />
        </com.google.android.material.card.MaterialCardView>
 
         <ImageView

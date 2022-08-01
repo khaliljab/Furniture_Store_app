@@ -1,6 +1,7 @@
 package com.example.finalproject.HomePage;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -25,7 +26,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.squareup.picasso.Picasso;
 
 
@@ -57,18 +60,17 @@ public class HomeActivity extends AppCompatActivity {
         firebaseFirestore=FirebaseFirestore.getInstance();
         firebaseAuth=FirebaseAuth.getInstance();
 
-        String id =firebaseAuth.getCurrentUser().getUid();
-
-        firebaseFirestore.collection("Users").document(id)
-                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        firebaseFirestore.collection("Users").document(firebaseAuth.getCurrentUser().getUid())
+                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                String name= (String) task.getResult().getData().get("Name");
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                String name= (String) value.getData().get("Name");
                 Username_drawer.setText(name);
-                String image = (String) task.getResult().getData().get("Profile Photo");
+                String image = (String) value.getData().get("Profile Photo");
                 Picasso.get().load(image).into(person_photo);
             }
         });
+
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,8 +116,6 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-
 
         fragment(new Home_Page_Fr());
         nav_bar.setOnItemSelectedListener(item -> {

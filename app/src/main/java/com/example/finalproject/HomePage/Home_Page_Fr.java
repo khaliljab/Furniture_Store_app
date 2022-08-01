@@ -44,15 +44,7 @@ public class Home_Page_Fr extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home__page_, container, false);
 
-        cat_1=view.findViewById(R.id.cat_1);
-        cat_2=view.findViewById(R.id.cat_2);
-        cat_3=view.findViewById(R.id.cat_3);
-        cat_4=view.findViewById(R.id.cat_4);
-        cat_5=view.findViewById(R.id.cat_5);
-
-
-//        // slider image in home page
-//
+        // slider image in home page
         ImageSlider imageSlider =view.findViewById(R.id.image_slider);
         ArrayList<SlideModel> slideModels =new ArrayList<>();
         slideModels.add(new SlideModel(R.drawable.slider_1,null));
@@ -60,65 +52,49 @@ public class Home_Page_Fr extends Fragment {
         slideModels.add(new SlideModel(R.drawable.slider_3,null));
         imageSlider.setImageList(slideModels);
 
-        FragmentManager fragmentManager =getChildFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         categories_1 c =new categories_1();
-        fragmentTransaction.replace(R.id.frameLayout_cat,c);
-        fragmentTransaction.commit();
+        fragment(c);
 
-
+        cat_1=view.findViewById(R.id.cat_1);
         cat_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-        FragmentManager fragmentManager =getChildFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        categories_1 cat_1 = new categories_1();
-        fragmentTransaction.replace(R.id.frameLayout_cat,cat_1);
-        fragmentTransaction.commit();
+                categories_1 cat_1 = new categories_1();
+                fragment(cat_1);
             }
         });
+        cat_2=view.findViewById(R.id.cat_2);
         cat_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                FragmentManager fragmentManager =getChildFragmentManager();
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 categories_2 cat_2 = new categories_2();
-                fragmentTransaction.replace(R.id.frameLayout_cat,cat_2);
-                fragmentTransaction.commit();
+                fragment(cat_2);
+
             }
         });
+        cat_3=view.findViewById(R.id.cat_3);
         cat_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                FragmentManager fragmentManager =getChildFragmentManager();
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 categories_3 cat_3 = new categories_3();
-                fragmentTransaction.replace(R.id.frameLayout_cat,cat_3);
-                fragmentTransaction.commit();
+                fragment(cat_3);
             }
         });
+        cat_4=view.findViewById(R.id.cat_4);
         cat_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                FragmentManager fragmentManager =getChildFragmentManager();
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 categories_4 cat_4 = new categories_4();
-                fragmentTransaction.replace(R.id.frameLayout_cat,cat_4);
-                fragmentTransaction.commit();
+                fragment(cat_4);
             }
         });
+        cat_5=view.findViewById(R.id.cat_5);
         cat_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                FragmentManager fragmentManager =getChildFragmentManager();
-                FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
                 categories_5 cat_5 = new categories_5();
-                fragmentTransaction.replace(R.id.frameLayout_cat,cat_5);
-                fragmentTransaction.commit();
+                fragment(cat_5);
             }
         });
 
@@ -126,7 +102,13 @@ public class Home_Page_Fr extends Fragment {
 
         return view;
     }
-}
+    public void fragment(Fragment fragment){
+        FragmentManager fragmentManager =getChildFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout_cat,fragment);
+        fragmentTransaction.commit();
+    }
+    }
 
 
 

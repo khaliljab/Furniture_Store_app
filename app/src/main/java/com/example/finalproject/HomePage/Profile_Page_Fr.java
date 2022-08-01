@@ -13,6 +13,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -24,13 +25,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.finalproject.R;
+import com.example.finalproject.UpdateProfile;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.auth.User;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.UploadTask;
@@ -47,9 +52,12 @@ public class Profile_Page_Fr extends Fragment {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firestore;
     Uri uri;
-    Button add_firestore;
+    Button update_profile;
     TextView TV_Username,TV_Email;
     LinearLayout liner_logout;
+    TextView Tv_phone,Tv_Address;
+
+
 
     ActivityResultLauncher<Intent> launcher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -76,59 +84,29 @@ public class Profile_Page_Fr extends Fragment {
         TV_Email = view.findViewById(R.id.TV_Email);
         add_photo = view.findViewById(R.id.add_photo);
         image_person = view.findViewById(R.id.image_person);
-        add_firestore = view.findViewById(R.id.add_firestore);
+        Tv_phone = view.findViewById(R.id.Tv_phone);
+        Tv_Address = view.findViewById(R.id.Tv_address);
+
+        update_profile = view.findViewById(R.id.update_profile);
         firebaseStorage=FirebaseStorage.getInstance();
         firestore= FirebaseFirestore.getInstance();
         firebaseAuth=FirebaseAuth.getInstance();
-        add_photo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent();
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                launcher.launch(intent);
-            }
-        });
 
 
-        add_firestore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                firebaseStorage.getReference().child("images").child(firebaseAuth.getCurrentUser().getUid()).putFile(uri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        if (task.isSuccessful()){
-                            firebaseStorage.getReference().child("images").child(firebaseAuth.getCurrentUser().getUid()).getDownloadUrl()
-                                    .addOnCompleteListener(new OnCompleteListener<Uri>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<Uri> task) {
-                                            task.getResult();
-                                            HashMap<String,Object> map =new HashMap<>();
-                                            map.put("Profile Photo",task.getResult());
-                                            firestore.collection("Users").document(firebaseAuth.getCurrentUser().getUid())
-                                                    .update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                }
-                                            });
-                                        }
-                                    });
-                        }
-                    }
-                });
-
-            }
-        });
         firestore.collection("Users").document(firebaseAuth.getCurrentUser().getUid())
-                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                String Email =(String) task.getResult().getData().get("Email");
-                String UserName =(String) task.getResult().getData().get("Name");
-                String image = (String) task.getResult().getData().get("Profile Photo");
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                String Email =(String) value.getData().get("Email");
+                String UserName =(String) value.getData().get("Name");
+                String image = (String) value.getData().get("Profile Photo");
+                String address = (String) value.getData().get("Address");
+                String phone = (String) value.getData().get("Phone");
                 Picasso.get().load(image).into(image_person);
                 TV_Username.setText(UserName);
                 TV_Email.setText(Email);
+                Tv_Address.setText(address);
+                Tv_phone.setText(phone);
             }
         });
 
@@ -142,6 +120,13 @@ public class Profile_Page_Fr extends Fragment {
                 getActivity().finish();
             }
         });
+        update_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(), UpdateProfile.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
 
@@ -152,11 +137,74 @@ public class Profile_Page_Fr extends Fragment {
 
 
 
+//        add_photo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent =new Intent();
+//                intent.setAction(Intent.ACTION_GET_CONTENT);
+//                intent.setType("image/*");
+//                launcher.launch(intent);
+//            }
+//        });
+
+
+//        add_firestore.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                firebaseStorage.getReference().child("images").child(firebaseAuth.getCurrentUser().getUid()).putFile(uri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+//                        if (task.isSuccessful()){
+//                            firebaseStorage.getReference().child("images").child(firebaseAuth.getCurrentUser().getUid()).getDownloadUrl()
+//                                    .addOnCompleteListener(new OnCompleteListener<Uri>() {
+//                                        @Override
+//                                        public void onComplete(@NonNull Task<Uri> task) {
+//                                            task.getResult();
+//                                            HashMap<String,Object> map =new HashMap<>();
+//                                            map.put("Profile Photo",task.getResult());
+//                                            firestore.collection("Users").document(firebaseAuth.getCurrentUser().getUid())
+//                                                    .update(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                                @Override
+//                                                public void onComplete(@NonNull Task<Void> task) {
+//                                                }
+//                                            });
+//                                        }
+//                                    });
+//                        }
+//                    }
+//                });
+//
+//            }
+//        });
 
 
 
 
 
+
+
+
+
+
+
+
+//        firestore.collection("Users").document(firebaseAuth.getCurrentUser().getUid())
+//                .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                String Email =(String) task.getResult().getData().get("Email");
+//                String UserName =(String) task.getResult().getData().get("Name");
+//                String image = (String) task.getResult().getData().get("Profile Photo");
+//                String address = (String) task.getResult().getData().get("Address");
+//                String phone = (String) task.getResult().getData().get("Phone");
+//                Picasso.get().load(image).into(image_person);
+//                TV_Username.setText(UserName);
+//                TV_Email.setText(Email);
+//                Tv_Address.setText(address);
+//                Tv_phone.setText(phone);
+//
+//            }
+//        });
 
 
 
