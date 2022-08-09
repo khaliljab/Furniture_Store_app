@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.animation.Animation;
@@ -20,12 +21,16 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.finalproject.Admin;
 import com.example.finalproject.HomePage.HomeActivity;
 import com.example.finalproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class LoginActivity extends AppCompatActivity {
     TextView register_now,forget_password;
@@ -35,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     ProgressBar progressBar;
     CheckBox remember;
+    FirebaseFirestore firebaseFirestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         ed_password =findViewById(R.id.ed_password_login);
         progressBar =findViewById(R.id.progressBar);
         remember=findViewById(R.id.remember);
+        firebaseFirestore=FirebaseFirestore.getInstance();
 
 
 
@@ -77,11 +84,13 @@ public class LoginActivity extends AppCompatActivity {
                     ed_password.setError("الرجاء إدخال كلمة المرور");
                     return;
                 }
+
                 progressBar.setVisibility(View.VISIBLE);
                 firebaseAuth.signInWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+
                             Toast.makeText(LoginActivity.this, "تم تسجيل الدخول بنجاح", Toast.LENGTH_SHORT).show();
                             Intent intent =new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
@@ -128,7 +137,6 @@ public class LoginActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor= preferences.edit();
                     editor.putString("rem","false");
                     editor.apply();
-
                 }
             }
         });

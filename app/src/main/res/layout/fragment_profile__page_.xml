@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomePage.Profile_Page_Fr"
+    tools:context=".PageNavgationBar.Profile_Page_Fr"
     android:layoutDirection="rtl"
     android:background="@color/white">
 
@@ -55,12 +55,12 @@
             android:background="@drawable/shape_btn"
             android:backgroundTint="@color/main_color_2"
             android:clickable="true"
-
             android:fontFamily="@font/roboto"
             android:foreground="?attr/selectableItemBackground"
             android:text="تعديل الملف الشخصي"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"

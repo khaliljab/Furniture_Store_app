@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.finalproject.HomePage.AdapterRecycleViewHome2;
+import com.example.finalproject.Adapter.AdapterRecycleViewHome2;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

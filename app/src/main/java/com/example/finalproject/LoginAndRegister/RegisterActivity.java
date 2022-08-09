@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
                 HashMap<Object,Object> map =new HashMap<>();
                 map.put("Name",Name);
                 map.put("Email",Email);
-                if(Name.isEmpty()){
+                if(Name.isEmpty() ){
                     ed_Username.setError("الرجاء إدخال اسم المستخدم");
                     return;
                 }

@@ -1,4 +1,4 @@
-package com.example.finalproject.HomePage;
+package com.example.finalproject.PageNavgationBar;
 
 import android.os.Bundle;
 
@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.finalproject.Adapter.AdapterFavorite;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

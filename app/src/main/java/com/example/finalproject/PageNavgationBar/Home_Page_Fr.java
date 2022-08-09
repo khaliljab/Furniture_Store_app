@@ -1,4 +1,4 @@
-package com.example.finalproject.HomePage;
+package com.example.finalproject.PageNavgationBar;
 
 import android.os.Bundle;
 
@@ -13,6 +13,11 @@ import android.widget.Button;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.finalproject.HomePage.categories_1;
+import com.example.finalproject.HomePage.categories_2;
+import com.example.finalproject.HomePage.categories_3;
+import com.example.finalproject.HomePage.categories_4;
+import com.example.finalproject.HomePage.categories_5;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;

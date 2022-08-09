@@ -12,10 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".Admin"
+            android:exported="false" />
+        <activity
+            android:name=".DetailsPage"
+            android:exported="false" />
+        <activity
             android:name=".HomePage.UpdateProfile"
             android:exported="false" />
         <activity
-            android:name=".HomePage.All_Categories"
+            android:name=".HomePage.Show_All_Categories"
             android:exported="false" />
         <activity
             android:name=".HomePage.NewPassword"

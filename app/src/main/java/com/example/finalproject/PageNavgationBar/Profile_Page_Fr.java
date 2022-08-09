@@ -1,4 +1,4 @@
-package com.example.finalproject.HomePage;
+package com.example.finalproject.PageNavgationBar;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.finalproject.HomePage.UpdateProfile;
 import com.example.finalproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;

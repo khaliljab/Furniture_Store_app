@@ -12,8 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.finalproject.HomePage.AdapterRecycleViewHome2;
-import com.example.finalproject.HomePage.All_Categories;
+import com.example.finalproject.Adapter.AdapterRecycleViewHome2;
 import com.example.finalproject.R;
 
 import java.util.ArrayList;
@@ -68,7 +67,7 @@ public class categories_1 extends Fragment {
         see_more_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), All_Categories.class);
+                Intent intent = new Intent(getActivity(), Show_All_Categories.class);
                 startActivity(intent);
             }
         });

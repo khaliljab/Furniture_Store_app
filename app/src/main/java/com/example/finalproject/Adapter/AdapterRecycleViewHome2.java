@@ -1,4 +1,4 @@
-package com.example.finalproject.HomePage;
+package com.example.finalproject.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,7 +15,7 @@ import com.example.finalproject.R;
 
 import java.util.ArrayList;
 
-public class AdapterCart extends RecyclerView.Adapter<AdapterCart.MyViewHolder> {
+public class AdapterRecycleViewHome2 extends RecyclerView.Adapter<AdapterRecycleViewHome2.MyViewHolder> {
 
     Context context;
     ArrayList<String> title;
@@ -23,8 +23,7 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.MyViewHolder> 
     ArrayList<String> price;
     ArrayList<Float> rating;
 
-
-    public AdapterCart(Context context, ArrayList<String> title, ArrayList<Integer> photo, ArrayList<String> price,ArrayList<Float> rating) {
+    public AdapterRecycleViewHome2(Context context, ArrayList<String> title, ArrayList<Integer> photo, ArrayList<String> price, ArrayList<Float> rating) {
         this.context = context;
         this.title = title;
         this.photo = photo;
@@ -35,18 +34,16 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.MyViewHolder> 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item_rv_cart,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_rv_categories_2,parent,false);
         return new MyViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.product_Name.setText(title.get(position));
-        holder.product_Price.setText(price.get(position));
-        holder.product_photo.setImageResource(photo.get(position));
+        holder.tv_title.setText(title.get(position));
+        holder.tv_price.setText(price.get(position));
+        holder.photo.setImageResource(photo.get(position));
         holder.ratingBar.setRating(rating.get(position));
-
-
     }
 
     @Override
@@ -55,17 +52,15 @@ public class AdapterCart extends RecyclerView.Adapter<AdapterCart.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView product_photo;
-        TextView product_Name,product_Price;
+        public TextView tv_title,tv_price;
+        public ImageView photo;
         RatingBar ratingBar;
-
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            product_photo=itemView.findViewById(R.id.photo_cart);
-            product_Name=itemView.findViewById(R.id.tv_title_cart);
-            product_Price=itemView.findViewById(R.id.tv_price_cart);
-            ratingBar=itemView.findViewById(R.id.rating_cart);
-
+            tv_title = itemView.findViewById(R.id.tv_title);
+            tv_price = itemView.findViewById(R.id.tv_price);
+            photo = itemView.findViewById(R.id.photo);
+            ratingBar=itemView.findViewById(R.id.rating);
 
         }
     }

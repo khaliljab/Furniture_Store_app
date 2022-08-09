@@ -6,7 +6,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -16,12 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
-import com.example.finalproject.HomePage.HomeActivity;
-import com.example.finalproject.HomePage.Profile_Page_Fr;
-import com.example.finalproject.LoginAndRegister.LoginActivity;
-import com.example.finalproject.LoginAndRegister.RegisterActivity;
 import com.example.finalproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -30,7 +24,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
@@ -144,7 +137,11 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 String UserName =(String) task.getResult().getData().get("Name");
+                String Address =(String) task.getResult().getData().get("Address");
+                String Phone =(String) task.getResult().getData().get("Phone");
                 ed_Username.setText(UserName);
+                ed_Address.setText(Address);
+                ed_phone.setText(Phone);
             }
         });
     }

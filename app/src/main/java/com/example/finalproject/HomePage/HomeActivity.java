@@ -17,11 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.finalproject.PageNavgationBar.Cart_Page_Fr;
+import com.example.finalproject.PageNavgationBar.Favorite_Page_Fr;
+import com.example.finalproject.PageNavgationBar.Home_Page_Fr;
+import com.example.finalproject.PageNavgationBar.Profile_Page_Fr;
 import com.example.finalproject.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton menu_btn;
     DrawerLayout drawer;
     ImageView person_photo;
-
+    LinearLayout liner_profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +57,7 @@ public class HomeActivity extends AppCompatActivity {
         View headerView = navigationView.getHeaderView(0);
         Username_drawer= headerView.findViewById(R.id.Username_drawer);
         person_photo= headerView.findViewById(R.id.person_photo);
+        liner_profile= headerView.findViewById(R.id.liner_profile);
         menu_btn =findViewById(R.id.menu_btn);
         drawer = findViewById(R.id.drawer_layout);
 
@@ -77,6 +81,16 @@ public class HomeActivity extends AppCompatActivity {
                 drawer.openDrawer(GravityCompat.START);
             }
         });
+
+//        liner_profile.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                fragment(new Profile_Page_Fr());
+//                title_page.setText("الملف الشخصي");
+//                drawer.closeDrawer(GravityCompat.START);
+//
+//            }
+//        });
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override

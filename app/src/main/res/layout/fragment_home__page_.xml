@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layoutDirection="rtl"
-    tools:context=".HomePage.Home_Page_Fr"
+    tools:context=".PageNavgationBar.Home_Page_Fr"
     android:background="@color/white"
     >
     <LinearLayout
